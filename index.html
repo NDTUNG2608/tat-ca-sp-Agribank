@@ -1,4 +1,36 @@
-<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Sinh Thái Tài Chính Y Tế | Agribank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        .header-logo {
+            height: 65px; 
+            margin-bottom: 25px;
+            background-color: #ffffff; 
+            padding: 10px 25px;
+            border-radius: 50px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://www.agribank.com.vn/contenthandler/dav/themelist/custom.portal.theme.AGBank3/assets/images/logo.png" alt="Logo Agribank" class="header-logo">
+        
+        <h1>Hệ Sinh Thái Tài Chính Y Tế</h1>
+        <p>Giải pháp Tín dụng, Trả lương & Thanh toán toàn diện dành riêng cho Bệnh viện và Cơ sở Y tế.</p>
+    </header>
+
+    <div class="container">
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
             <div class="card fade-in" data-modal-trigger="b2b-hospital">
                 <i data-lucide="building-2" class="card-icon"></i>
                 <h2>1. Giải pháp Bệnh viện (B2B)</h2>
@@ -21,3 +53,58 @@
                 <div class="card-action">Xem chi tiết <i data-lucide="arrow-right"></i></div>
             </div>
         </div>
+
+        <div id="contact-section" class="contact-section fade-in">
+            <h2>Đăng ký nhận tư vấn Giải pháp</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Vui lòng để lại thông tin, chuyên viên khách hàng doanh nghiệp sẽ liên hệ hỗ trợ đơn vị trong thời gian sớm nhất.</p>
+            
+            <form id="consultation-form">
+                <div class="form-group">
+                    <label for="fullName">Họ và Tên / Chức vụ *</label>
+                    <input type="text" id="fullName" class="form-control" placeholder="VD: Nguyễn Văn A - Trưởng phòng Tài chính" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hospitalName">Tên Bệnh viện / Cơ sở y tế *</label>
+                    <input type="text" id="hospitalName" class="form-control" placeholder="Nhập tên đơn vị công tác" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại liên hệ *</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="Nhập số điện thoại (10-11 số)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Giải pháp quan tâm nhất</label>
+                    <select id="service" class="form-control">
+                        <option value="Thanh toán không dùng tiền mặt (QR, POS)">Thanh toán không dùng tiền mặt (QR, POS)</option>
+                        <option value="Dịch vụ chi trả lương qua tài khoản">Dịch vụ chi trả lương qua tài khoản</option>
+                        <option value="Mở thẻ tín dụng / Vay tín chấp qua lương">Mở thẻ tín dụng / Vay tín chấp qua lương</option>
+                        <option value="Tài trợ vốn lưu động / Dự án">Tài trợ vốn lưu động / Dự án cho bệnh viện</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Gửi thông tin yêu cầu</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="product-modal" class="hidden">
+        <div id="modal-content">
+            <button id="modal-close"><i data-lucide="x"></i></button>
+            <img id="modal-image" src="" alt="">
+            <div class="modal-body">
+                <h3 id="modal-title"></h3>
+                <div id="modal-description"></div>
+                <a href="#contact-section" class="modal-cta">Đăng ký tư vấn gói này</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Agribank Chi nhánh 5. Tài liệu lưu hành nội bộ và đối tác.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
