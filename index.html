@@ -3,163 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agribank Chi nhánh 5 - TPHCM | Đồng Hành Cùng Ngành Y</title>
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <title>Agribank Chi nhánh 5 - Giải pháp Y tế Số</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Thêm một chút màu xanh y tế để tạo sự tin tưởng */
-        :root {
-            --medical-blue: #0076be;
-        }
-        .text-medical { color: var(--medical-blue); }
+        :root { --agri-dark: #005a3c; --agri-gold: #ed1c24; }
+        .bg-agri { background-color: var(--agri-dark); }
+        .text-agri { color: var(--agri-dark); }
+        .border-agri { border-color: var(--agri-dark); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 font-sans">
 
-    <header class="absolute top-0 left-0 right-0 z-10 p-6 md:p-8">
-        <div class="container mx-auto flex justify-between items-center">
-            <img src="https://www.inlogo.vn/wp-content/uploads/2023/04/logo-agribank-300x295.png" alt="Agribank Logo" class="h-12 md:h-16">
-            <div class="hidden md:block text-white font-bold text-right">
-                <p class="text-sm">Agribank Chi nhánh 5</p>
-                <p class="text-xs">Đồng hành cùng Thiên thần áo trắng</p>
-            </div>
+    <header class="bg-agri text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-wider">AGRIBANK CHI NHÁNH 5</div>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#kiosk" class="hover:text-yellow-400 transition">Kiosk Y tế</a>
+                <a href="#payment" class="hover:text-yellow-400 transition">Thanh toán</a>
+                <a href="#loans" class="hover:text-yellow-400 transition">Ưu đãi vay</a>
+            </nav>
         </div>
     </header>
 
-    <main>
-        <section class="relative h-[85vh] min-h-[600px] flex items-center text-white overflow-hidden">
-            <div class="absolute inset-0 z-0">
-                <img src="https://r2.flowith.net/files/o/1754654685351-agribank_branch_5_transaction_counter_modern_interior_index_0@1024x1024.png" alt="Không gian chuyên nghiệp" class="w-full h-full object-cover">
-                <div class="absolute inset-0 hero-gradient" style="background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);"></div>
-            </div>
-            <div class="relative z-10 container mx-auto px-6">
-                <h1 class="font-bold text-4xl md:text-5xl lg:text-6xl leading-tight max-w-4xl">
-                    Tiếp Sức Ngành Y - Đặc Quyền Tài Chính Cho <span class="text-yellow-400">Bác Sĩ & NVYT</span>
-                </h1>
-                <p class="mt-6 text-lg md:text-2xl max-w-2xl border-l-4 border-yellow-400 pl-4">
-                    Ưu đãi lãi suất chỉ từ 0.7%/tháng. Gói vay tín chấp hạn mức cao dành riêng cho cán bộ y tế đang công tác tại các Bệnh viện trên địa bàn TP.HCM.
-                </p>
-                <div class="mt-10 flex flex-wrap gap-4">
-                    <a href="#contact-form" class="cta-button-gold inline-block">Đăng Ký Ưu Tiên</a>
-                    <a href="#san-pham" class="bg-white/20 backdrop-blur-md hover:bg-white/30 text-white font-bold py-4 px-8 rounded-full transition-all border border-white/50">Xem Gói Đặc Quyền</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="san-pham" class="py-20 md:py-28 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-agribank-brown uppercase">Giải Pháp Tài Chính Chuyên Biệt</h2>
-                    <div class="w-24 h-1 bg-agribank-gold mx-auto mt-4"></div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    
-                    <div class="product-card bg-gray-50 flex flex-col overflow-hidden rounded-2xl shadow-lg border-b-4 border-agribank-gold transition-all duration-300 hover:-translate-y-2">
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="text-agribank-gold mb-4"><i data-lucide="user-plus" class="w-12 h-12"></i></div>
-                            <h3 class="text-2xl font-bold text-agribank-brown mb-4">Gói Vay Tín Chấp "Blouse Trắng"</h3>
-                            <ul class="text-gray-600 mb-6 space-y-2 flex-grow">
-                                <li>• Hạn mức lên đến <strong>500 triệu đồng</strong></li>
-                                <li>• Không cần tài sản thế chấp</li>
-                                <li>• Ưu tiên hồ sơ Bác sĩ, Dược sĩ, Quản lý, Lãnh đạo</li>
-                            </ul>
-                            <button data-modal-trigger="vay-bac-si" class="mt-auto font-bold text-agribank-gold hover:underline">Chi tiết gói vay &rarr;</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card bg-gray-50 flex flex-col overflow-hidden rounded-2xl shadow-lg border-b-4 border-green-600 transition-all duration-300 hover:-translate-y-2">
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="text-green-600 mb-4"><i data-lucide="heart-pulse" class="w-12 h-12"></i></div>
-                            <h3 class="text-2xl font-bold text-agribank-brown mb-4">An Tâm Công Tác</h3>
-                            <ul class="text-gray-600 mb-6 space-y-2 flex-grow">
-                                <li>• Thấu chi lương lên tới 100 triệu</li>
-                                <li>• Dành cho Điều dưỡng, Kỹ thuật viên, người lao động</li>
-                            </ul>
-                            <button data-modal-trigger="vay-nvyt" class="mt-auto font-bold text-green-600 hover:underline">Nhận ưu đãi &rarr;</button>
-                        </div>
-                    </div>
-                    
-                    <div class="product-card bg-gray-50 flex flex-col overflow-hidden rounded-2xl shadow-lg border-b-4 border-blue-600 transition-all duration-300 hover:-translate-y-2">
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="text-blue-600 mb-4"><i data-lucide="hospital" class="w-12 h-12"></i></div>
-                            <h3 class="text-2xl font-bold text-agribank-brown mb-4">Số Hóa Viện Phí 4.0</h3>
-                            <ul class="text-gray-600 mb-6 space-y-2 flex-grow">
-                                <li>• Lắp đặt VietQR/POS tại quầy miễn phí</li>
-                                <li>• Giải pháp chi lương tự động</li>
-                                <li>• Quản lý dòng tiền thông minh</li>
-                            </ul>
-                            <button data-modal-trigger="dv-benh-vien" class="mt-auto font-bold text-blue-600 hover:underline">Hợp tác doanh nghiệp &rarr;</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact-form" class="py-16 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="bg-white rounded-3xl shadow-2xl overflow-hidden grid lg:grid-cols-2">
-                    <div class="bg-agribank-brown p-12 text-white flex flex-col justify-center">
-                        <h2 class="text-3xl font-bold mb-6">Đăng Ký Tư Vấn Ưu Tiên</h2>
-                        <p class="text-gray-300 mb-8">Chúng tôi hiểu thời gian của các y bác sĩ là vô cùng quý giá. Chuyên viên của Agribank Chi nhánh 5 sẽ chủ động liên hệ theo khung giờ bạn yêu cầu.</p>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-4"><i data-lucide="check-circle" class="text-agribank-gold"></i> Phê duyệt nhanh cho ngành Y</div>
-                            <div class="flex items-center gap-4"><i data-lucide="check-circle" class="text-agribank-gold"></i> Không cần đến ngân hàng</div>
-                        </div>
-                    </div>
-                    <div class="p-12">
-                        <form id="consultation-form" action="https://formsubmit.co/huynhtantoi1234567@gmail.com" method="POST" class="space-y-5">
-                            <div class="form-input-wrapper border-2 border-gray-100 rounded-xl p-3 flex items-center">
-                                <i data-lucide="user" class="text-gray-400 mr-3"></i>
-                                <input type="text" name="name" placeholder="Họ và Tên bác sĩ/cán bộ" required class="w-full outline-none">
-                            </div>
-                            <div class="form-input-wrapper border-2 border-gray-100 rounded-xl p-3 flex items-center">
-                                <i data-lucide="phone" class="text-gray-400 mr-3"></i>
-                                <input type="tel" name="phone" placeholder="Số điện thoại di động" required class="w-full outline-none">
-                            </div>
-                            <div class="form-input-wrapper border-2 border-gray-100 rounded-xl p-3 flex items-center">
-                                <i data-lucide="building-2" class="text-gray-400 mr-3"></i>
-                                <input type="text" name="hospital" placeholder="Bệnh viện/Đơn vị đang công tác" class="w-full outline-none">
-                            </div>
-                            <div class="form-input-wrapper border-2 border-gray-100 rounded-xl p-3 flex items-center">
-                                <i data-lucide="settings-2" class="text-gray-400 mr-3"></i>
-                                <select name="need" required class="w-full outline-none bg-transparent">
-                                    <option value="" disabled selected>Nhu cầu của bạn...</option>
-                                    <option value="Vay tín chấp Bác sĩ">Vay tín chấp Bác sĩ (Hạn mức cao)</option>
-                                    <option value="Vay tiêu dùng NVYT">Vay tiêu dùng NVYT (Lãi suất thấp)</option>
-                                    <option value="Mở thẻ đặc quyền">Mở thẻ tín dụng đặc quyền</option>
-                                    <option value="Dịch vụ Bệnh viện">Hợp tác giải pháp cho Bệnh viện</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="w-full bg-agribank-gold hover:bg-yellow-600 text-agribank-brown font-black py-4 rounded-xl transition-all shadow-lg uppercase tracking-wider">
-                                Gửi Yêu Cầu Tư Vấn Ngay
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-agribank-brown text-white py-12 border-t-4 border-agribank-gold">
+    <section class="bg-white py-20 border-b">
         <div class="container mx-auto px-6 text-center">
-            <h3 class="text-xl font-bold mb-4">Agribank Chi nhánh 5 - TPHCM</h3>
-            <p class="text-gray-400">Địa chỉ: 1101-1103-1105 Trần Hưng Đạo, P. An Đông, Quận 5, TP. HCM</p>
-            <p class="text-agribank-gold font-bold mt-2">Hotline Ưu Tiên Ngành Y: 0345.678.881</p>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-sm text-gray-500">
-                &copy; 2026 Agribank CN5. Thiết kế chuyên biệt cho mảng Y Tế.
+            <h1 class="text-4xl md:text-5xl font-extrabold text-agri mb-6">Đồng Hành Cùng Y Tế Số 2026</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Giải pháp thanh toán phi tiền mặt toàn diện và hệ thống Kiosk thông minh dành riêng cho Bệnh viện.</p>
+        </div>
+    </section>
+
+    <section id="kiosk" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-agri mb-12">Hệ Sinh Thái Kiosk Thông Minh</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-agri">
+                    <i class="fas fa-id-card text-4xl text-agri mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Tiếp nhận Tự động</h3>
+                    <p class="text-gray-600">Sử dụng CCCD gắn chip, thẻ BHYT để đăng ký KCB chỉ trong 30 giây.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-agri">
+                    <i class="fas fa-qrcode text-4xl text-agri mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Thanh toán Đa kênh</h3>
+                    <p class="text-gray-600">Hỗ trợ VietQR, FacePay và thẻ ngân hàng ngay tại Kiosk.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-agri">
+                    <i class="fas fa-file-invoice-dollar text-4xl text-agri mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Kết nối HIS</h3>
+                    <p class="text-gray-600">Đồng bộ dữ liệu viện phí thời gian thực, gạch nợ tự động trên hệ thống.</p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <section id="loans" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="bg-agri rounded-3xl p-10 text-white overflow-hidden relative">
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Đặc Quyền Dành Cho Cán Bộ Y Tế</h2>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-semibold border-b border-white/30 pb-2">Vay Tín Chấp</h3>
+                            <ul class="space-y-3">
+                                <li><i class="fas fa-check-circle mr-2"></i> Lãi suất cực thấp: <strong>0.6%/tháng</strong></li>
+                                <li><i class="fas fa-check-circle mr-2"></i> Hạn mức lên đến <strong>500 triệu đồng</strong></li>
+                                <li><i class="fas fa-check-circle mr-2"></i> Không cần tài sản bảo đảm</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-semibold border-b border-white/30 pb-2">Vay Thế Chấp</h3>
+                            <ul class="space-y-3">
+                                <li><i class="fas fa-check-circle mr-2"></i> Lãi suất từ <strong>6.5%/năm</strong></li>
+                                <li><i class="fas fa-check-circle mr-2"></i> Thời hạn vay lên tới <strong>30 năm</strong></li>
+                                <li><i class="fas fa-check-circle mr-2"></i> Thủ tục thẩm định ưu tiên cho bác sĩ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4 text-white font-bold">Agribank Chi nhánh 5 - TP. Hồ Chí Minh</p>
+            <p>Liên hệ: Tùng - Đại diện truyền thông dự án Y tế số</p>
+            <p class="mt-8 text-sm">&copy; 2026 Bản quyền thuộc về Agribank Chi nhánh 5</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
