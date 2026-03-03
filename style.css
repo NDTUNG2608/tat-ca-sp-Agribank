@@ -1,22 +1,209 @@
-/* style.css */
-:root { 
-    --agri-dark: #005a3c; 
-    --agri-gold: #ed1c24; 
+:root {
+    --agribank-brown: #6A2D28;
+    --agribank-red: #D9252D;
+    --agribank-gold: #C09440;
+    --beige-light: #F9F6F0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.bg-agri { background-color: var(--agri-dark); }
-.text-agri { color: var(--agri-dark); }
-.border-agri { border-color: var(--agri-dark); }
+.hero-gradient {
+    background: linear-gradient(90deg, rgba(40, 20, 20, 0.85) 0%, rgba(40, 20, 20, 0.6) 50%, rgba(0, 0, 0, 0.1) 100%);
+}
 
-/* Hiệu ứng hover nhẹ cho các card */
-.feature-card {
+.cta-button-gold {
+    background-color: var(--agribank-gold);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-gold:hover {
+    background-color: #d4a94a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cta-button-red {
+    background-color: var(--agribank-red);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button-red:hover {
+    background-color: #b71c22;
+    transform: translateY(-2px);
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.text-agribank-brown {
+    color: var(--agribank-brown);
+}
+
+.text-agribank-gold {
+    color: var(--agribank-gold);
+}
+
+.bg-agribank-brown {
+    background-color: var(--agribank-brown);
+}
+
+.bg-beige-light {
+    background-color: var(--beige-light);
+}
+
+.awards-carousel {
+    display: flex;
+    position: absolute;
+    left: 0;
+    animation: scroll 30s linear infinite;
+    width: 200%;
+}
+
+.award-item {
+    flex-shrink: 0;
+    width: auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #4A5568;
+    opacity: 0.8;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.icon-wrapper {
+    background-color: var(--beige-light);
+    color: var(--agribank-gold);
+    border-radius: 50%;
+    padding: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--agribank-gold);
+    box-shadow: 0 0 0 3px rgba(192, 148, 64, 0.2);
+}
+
+/* Modal styles */
+#product-modal.visible {
+    opacity: 1;
+}
+
+#product-modal.visible #modal-content {
+    transform: scale(1);
+}
+* ================================== */
+/* == CSS CẬP NHẬT & BỔ SUNG == */
+/* ================================== */
+
+/* Căn chỉnh lại thẻ sản phẩm cho đồng đều */
+.product-card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Tinh chỉnh cho Modal --- */
+
+/* Loại bỏ các style cũ không cần thiết nữa */
+#product-modal.visible {
+    /* không cần nữa */
+}
+#product-modal.visible #modal-content {
+   /* không cần nữa */
+}
+
+/* Thêm các style mới */
+#product-modal {
+    /* Đã thêm class `flex items-center justify-center` trong HTML */
+}
+
+/* Định dạng cho phần mô tả trong modal */
+#modal-description h4 {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 700;
+    color: var(--agribank-brown);
+    margin-bottom: 0.75rem;
+}
+
+#modal-description p {
+    font-size: 1rem; /* 16px */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+#modal-description ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#modal-description li {
+    padding-left: 1.75rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+/* Dùng icon check đẹp hơn cho danh sách */
+#modal-description li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23C09440" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle-2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
