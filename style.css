@@ -1,82 +1,22 @@
-:root {
-    --agribank-brown: #6A2D28;
-    --agribank-red: #D9252D;
-    --agribank-gold: #C09440;
-    --beige-light: #F9F6F0;
-    --medical-blue: #0076be;
+/* style.css */
+:root { 
+    --agri-dark: #005a3c; 
+    --agri-gold: #ed1c24; 
 }
 
-body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
-
-/* Hiệu ứng Hero */
-.hero-gradient {
-    background: linear-gradient(90deg, rgba(40, 20, 20, 0.9) 0%, rgba(40, 20, 20, 0.6) 50%, transparent 100%);
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Tối ưu Card sản phẩm cho ngành Y */
-.product-card {
-    background: white;
-    border-radius: 16px;
-    border: 1px solid #eee;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    display: flex;
-    flex-direction: column;
-}
+.bg-agri { background-color: var(--agri-dark); }
+.text-agri { color: var(--agri-dark); }
+.border-agri { border-color: var(--agri-dark); }
 
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(106, 45, 40, 0.15);
-    border-color: var(--agribank-gold);
+/* Hiệu ứng hover nhẹ cho các card */
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Nút bấm chuyên nghiệp */
-.cta-button-gold {
-    background-color: var(--agribank-gold);
-    color: white;
-    padding: 16px 36px;
-    border-radius: 50px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(192, 148, 64, 0.3);
-}
-
-.cta-button-gold:hover {
-    background-color: #d4a94a;
-    transform: scale(1.05);
-}
-
-/* Form nhập liệu tối ưu cho Mobile */
-.form-input-wrapper {
-    position: relative;
-    border: 2px solid #f0f0f0;
-    border-radius: 12px;
-    padding: 4px 12px;
-    transition: all 0.3s;
-}
-
-.form-input-wrapper:focus-within {
-    border-color: var(--agribank-gold);
-    background: white;
-}
-
-.form-input {
-    width: 100%;
-    padding: 12px;
-    outline: none;
-    background: transparent;
-    font-weight: 500;
-}
-
-/* Animation cho vòng quay danh hiệu */
-.awards-carousel {
-    display: flex;
-    animation: scroll 40s linear infinite;
-    width: max-content;
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
