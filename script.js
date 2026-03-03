@@ -1,33 +1,82 @@
-// script.js
+import { productDetails } from './data.js';
+
 document.addEventListener('DOMContentLoaded', () => {
+    lucide.createIcons();
+
+    const modal = document.getElementById('product-modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalCloseBtn = document.getElementById('modal-close');
+    const modalTriggers = document.querySelectorAll('[data-modal-trigger]');
+
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalCTA = document.querySelector('.modal-cta');
+
+    function openModal(productId) {
+        const details = productDetails[productId];
+        if (!details) return;
+
+        modalImage.src = details.imageSrc;
+        modalImage.alt = details.title;
+        modalTitle.textContent = details.title;
+        modalDescription.innerHTML = details.description;
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.add('visible');
+        }, 10);
+    }
+
+    function closeModal() {
+        modal.classList.remove('visible');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
     
-    // Đổ dữ liệu cho phần Kiosk
-    const kioskContainer = document.getElementById('kiosk-features');
-    if (kioskContainer) {
-        siteData.kioskFeatures.forEach(feature => {
-            kioskContainer.innerHTML += `
-                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-agri feature-card">
-                    <i class="${feature.icon} text-4xl text-agri mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">${feature.title}</h3>
-                    <p class="text-gray-600">${feature.desc}</p>
-                </div>
-            `;
+    modalTriggers.forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.modalTrigger;
+            openModal(productId);
         });
-    }
+    });
 
-    // Đổ dữ liệu cho Vay Tín Chấp
-    const unsecuredContainer = document.getElementById('unsecured-loans');
-    if (unsecuredContainer) {
-        siteData.loans.unsecured.forEach(item => {
-            unsecuredContainer.innerHTML += `<li><i class="fas fa-check-circle mr-2 text-yellow-400"></i> ${item}</li>`;
-        });
-    }
+    modalCloseBtn.addEventListener('click', closeModal);
 
-    // Đổ dữ liệu cho Vay Thế Chấp
-    const securedContainer = document.getElementById('secured-loans');
-    if (securedContainer) {
-        siteData.loans.secured.forEach(item => {
-            securedContainer.innerHTML += `<li><i class="fas fa-check-circle mr-2 text-yellow-400"></i> ${item}</li>`;
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    modalCTA.addEventListener('click', (e) => {
+        closeModal();
+    });
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
-    }
+    });
+
+
+    const form = document.getElementById('consultation-form');
+    const phoneInput = document.getElementById('phone');
+    form.addEventListener('submit', function(e) {
+        const phoneRegex = new RegExp('^[0-9]{10,11}$');
+        if (!phoneRegex.test(phoneInput.value)) {
+            e.preventDefault();
+            alert('Vui lòng nhập số điện thoại hợp lệ (10-11 chữ số).');
+            phoneInput.focus();
+        }
+    });
 });
