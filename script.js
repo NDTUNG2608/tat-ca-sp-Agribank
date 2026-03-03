@@ -1,8 +1,10 @@
 import { productDetails } from './data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Khởi tạo icon Lucide
     lucide.createIcons();
 
+    // 1. Xử lý Modal Sản phẩm
     const modal = document.getElementById('product-modal');
     const modalContent = document.getElementById('modal-content');
     const modalCloseBtn = document.getElementById('modal-close');
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalDescription.innerHTML = details.description;
 
         modal.classList.remove('hidden');
+        // Thêm một chút delay để CSS transition có thời gian chạy
         setTimeout(() => {
             modal.classList.add('visible');
         }, 10);
@@ -44,17 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalCloseBtn.addEventListener('click', closeModal);
 
+    // Đóng modal khi click ra vùng nền tối
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
         }
     });
 
+    // Cuộn xuống form khi ấn nút trong Modal
     modalCTA.addEventListener('click', (e) => {
         closeModal();
     });
 
-
+    // 2. Xử lý Cuộn trang mượt (Smooth Scroll)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -68,15 +73,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 3. Hiệu ứng xuất hiện khi cuộn trang (Fade-in On Scroll)
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
 
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+
+    // 4. Kiểm tra Form (Validation)
     const form = document.getElementById('consultation-form');
     const phoneInput = document.getElementById('phone');
+    
     form.addEventListener('submit', function(e) {
         const phoneRegex = new RegExp('^[0-9]{10,11}$');
         if (!phoneRegex.test(phoneInput.value)) {
             e.preventDefault();
             alert('Vui lòng nhập số điện thoại hợp lệ (10-11 chữ số).');
             phoneInput.focus();
+            return;
         }
+        
+        // Mô phỏng gửi form thành công
+        e.preventDefault();
+        alert('Cảm ơn bạn! Thông tin đã được ghi nhận. Chúng tôi sẽ liên hệ sớm.');
+        form.reset();
     });
 });
