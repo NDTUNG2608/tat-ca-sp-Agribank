@@ -1,10 +1,10 @@
 import { productDetails } from './data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Khởi tạo icon Lucide
+    // 1. Khởi tạo Icon
     lucide.createIcons();
 
-    // 1. Xử lý Modal Sản phẩm
+    // 2. Xử lý Modal hiển thị gói sản phẩm
     const modal = document.getElementById('product-modal');
     const modalContent = document.getElementById('modal-content');
     const modalCloseBtn = document.getElementById('modal-close');
@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         modalDescription.innerHTML = details.description;
 
         modal.classList.remove('hidden');
-        // Thêm một chút delay để CSS transition có thời gian chạy
         setTimeout(() => {
             modal.classList.add('visible');
         }, 10);
@@ -47,38 +46,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modalCloseBtn.addEventListener('click', closeModal);
 
-    // Đóng modal khi click ra vùng nền tối
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             closeModal();
         }
     });
 
-    // Cuộn xuống form khi ấn nút trong Modal
-    modalCTA.addEventListener('click', (e) => {
+    modalCTA.addEventListener('click', () => {
         closeModal();
     });
 
-    // 2. Xử lý Cuộn trang mượt (Smooth Scroll)
+    // 3. Cuộn trang mượt
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
-    // 3. Hiệu ứng xuất hiện khi cuộn trang (Fade-in On Scroll)
+    // 4. Hiệu ứng Fade-in khi cuộn chuột
     const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    };
+    const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
@@ -91,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(fader);
     });
 
-    // 4. Kiểm tra Form (Validation)
+    // 5. Kiểm tra Form đăng ký
     const form = document.getElementById('consultation-form');
     const phoneInput = document.getElementById('phone');
     
@@ -104,9 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        // Mô phỏng gửi form thành công
         e.preventDefault();
-        alert('Cảm ơn bạn! Thông tin đã được ghi nhận. Chúng tôi sẽ liên hệ sớm.');
+        alert('Cảm ơn bạn! Thông tin đã được ghi nhận. Chuyên viên Agribank sẽ liên hệ sớm.');
         form.reset();
     });
 });
