@@ -36,12 +36,12 @@ export const productDetails = {
                 <ul style="padding-left: 20px; margin-top: 0;">
                     <li><strong>Mục đích:</strong> Mua nhà/đất, xây mới/sửa chữa nhà; mua sắm phương tiện đi lại, đồ dùng sinh hoạt thiết yếu.</li>
                     <li><strong>Mức cho vay:</strong> Tối đa đến <strong>100% nhu cầu vốn</strong>.</li>
-                    <li><strong>Chính sách:</strong> Lãi suất hấp dẫn, linh hoạt kỳ hạn.</li>
+                    <li><strong>Chính sách:</strong> Lãi suất hấp dẫn, linh hoạt kỳ hạn (ngắn, trung và dài hạn).</li>
                 </ul>
 
                 <h4 style="color: #a31720; margin-bottom: 8px; font-size: 1.1rem; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">3. Phát hành thẻ tín dụng (Lãi suất từ 15%/năm)</h4>
                 <ul style="padding-left: 20px; margin-top: 0;">
-                    <li><strong>Thẻ tín dụng Quốc tế:</strong> Hạn mức tới <strong>5 tỷ đồng</strong>. Miễn lãi tối đa <strong>45 ngày</strong>. Đặc quyền: phòng chờ thương gia, sân golf, nhà hàng, resort 5 sao. Hoàn tiền lên đến 1.000.000đ/chương trình.</li>
+                    <li><strong>Thẻ tín dụng Quốc tế:</strong> Hạn mức tới <strong>5 tỷ đồng</strong>. Miễn lãi tối đa <strong>45 ngày</strong>. Thanh toán trực tuyến bảo mật 3D-Secured. Đặc quyền: phòng chờ thương gia, sân golf, nhà hàng, resort 5 sao. Hoàn tiền lên đến 1.000.000đ/chương trình.</li>
                     <li><strong>Thẻ nội địa Lộc Việt:</strong> Thẻ chip tích hợp 2-trong-1 (ghi nợ & tín dụng). Chạm đa tiện ích. Miễn lãi tối đa đến <strong>55 ngày</strong>. Hoàn tiền lên tới 2.000.000đ/chương trình.</li>
                 </ul>
 
