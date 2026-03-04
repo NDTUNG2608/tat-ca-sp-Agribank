@@ -1,6 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Sinh Thái Tài Chính Y Tế | Agribank Chi Nhánh 5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        .header-logo {
+            height: 75px; 
+            margin-bottom: 25px;
+            background-color: #ffffff; 
+            padding: 10px 25px;
+            border-radius: 50px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://i.postimg.cc/FKw6BQvR/Logo-Agribank-Chi-nhanh-5-chu-Do.png" alt="Logo Agribank Chi Nhánh 5" class="header-logo">
+        
+        <h1>Hệ Sinh Thái Tài Chính Y Tế</h1>
+        <p>Giải pháp Tín dụng, Trả lương & Thanh toán toàn diện dành riêng cho Bệnh viện và Cơ sở Y tế.</p>
+    </header>
+
     <div class="container">
         
-        <div class="award-banner fade-in" style="text-align: center; margin-bottom: 40px;">
+        <div class="award-banner fade-in" style="text-align: center; margin-bottom: 40px; padding: 0 15px;">
             <img src="https://i.postimg.cc/N0ZnzwtK/Maket-Giai-thuong-Sao-khue-2025-Bang-ron-ngang.jpg" alt="Giải thưởng Sao Khuê 2025" style="width: 100%; max-width: 1000px; border-radius: 12px; box-shadow: 0 8px 25px rgba(163, 23, 32, 0.2);">
             <p style="font-size: 1.1rem; color: #a31720; margin-top: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
                 Hệ thống CNTT Agribank xuất sắc đạt giải thưởng Sao Khuê 2025
@@ -12,7 +43,7 @@
                 <i data-lucide="building-2" class="card-icon"></i>
                 <h2>1. Giải pháp Bệnh viện (B2B)</h2>
                 <ul>
-                    <li><strong>Thanh toán không tiền mặt:</strong> QR, POS, Kiosk.</li>
+                    <li><strong>Thanh toán không tiền mặt:</strong> VietQR, POS, Kiosk.</li>
                     <li><strong>Quản lý dòng tiền:</strong> Chi lương & phát hành thẻ miễn phí.</li>
                     <li><strong>Tín dụng Tổ chức:</strong> Vốn lưu động, dự án y tế.</li>
                 </ul>
@@ -24,10 +55,64 @@
                 <h2>2. Giải pháp Y Bác sĩ & CBNV</h2>
                 <ul>
                     <li><strong>Thấu chi & Vay mua nhà:</strong> Tín chấp đến 500tr, vay tới 100% nhu cầu vốn.</li>
-                    <li><strong>Thẻ tín dụng VIP (Đến 5 tỷ):</strong> Lãi suất từ 15%, miễn lãi 45 ngày, đặc quyền VIP.</li>
-                    <li><strong>Thẻ Lộc Việt 2-in-1:</strong> Miễn lãi tối đa 55 ngày, hoàn tiền đến 2 triệu.</li>
+                    <li><strong>Thẻ tín dụng VIP (Đến 5 tỷ):</strong> Lãi suất từ 15%, miễn lãi 45 ngày, đặc quyền phòng chờ sân bay.</li>
+                    <li><strong>Thẻ Lộc Việt 2-in-1:</strong> Miễn lãi tối đa 55 ngày, hoàn tiền đến 2 triệu đồng.</li>
                 </ul>
                 <div class="card-action">Xem chi tiết <i data-lucide="arrow-right"></i></div>
             </div>
         </div>
+
+        <div id="contact-section" class="contact-section fade-in">
+            <h2>Đăng ký nhận tư vấn Giải pháp</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Vui lòng để lại thông tin, chuyên viên khách hàng doanh nghiệp sẽ liên hệ hỗ trợ đơn vị trong thời gian sớm nhất.</p>
+            
+            <form id="consultation-form">
+                <div class="form-group">
+                    <label for="fullName">Họ và Tên / Chức vụ *</label>
+                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="VD: Nguyễn Văn A - Trưởng phòng Tài chính" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hospitalName">Tên Bệnh viện / Cơ sở y tế *</label>
+                    <input type="text" id="hospitalName" name="hospitalName" class="form-control" placeholder="Nhập tên đơn vị công tác" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Số điện thoại liên hệ *</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Nhập số điện thoại (10-11 số)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Giải pháp quan tâm nhất</label>
+                    <select id="service" name="service" class="form-control">
+                        <option value="Thanh toán không dùng tiền mặt (QR, POS)">Thanh toán không dùng tiền mặt (QR, POS)</option>
+                        <option value="Dịch vụ chi trả lương qua tài khoản">Dịch vụ chi trả lương qua tài khoản</option>
+                        <option value="Mở thẻ tín dụng / Vay tín chấp qua lương">Mở thẻ tín dụng / Vay tín chấp qua lương</option>
+                        <option value="Tài trợ vốn lưu động / Dự án">Tài trợ vốn lưu động / Dự án cho bệnh viện</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Gửi thông tin yêu cầu</button>
+            </form>
         </div>
+    </div>
+
+    <div id="product-modal" class="hidden">
+        <div id="modal-content">
+            <button id="modal-close"><i data-lucide="x"></i></button>
+            <img id="modal-image" src="" alt="">
+            <div class="modal-body">
+                <h3 id="modal-title"></h3>
+                <div id="modal-description"></div>
+                <a href="#contact-section" class="modal-cta">Đăng ký tư vấn gói này</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Agribank Chi nhánh 5. Tài liệu lưu hành nội bộ và đối tác.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
