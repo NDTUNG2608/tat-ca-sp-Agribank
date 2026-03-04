@@ -1,35 +1,128 @@
-function doPost(e) {
-  try {
-    // 1. Lấy dữ liệu từ form trên website truyền về
-    var fullName = e.parameter.fullName;
-    var hospitalName = e.parameter.hospitalName;
-    var phone = e.parameter.phone;
-    var service = e.parameter.service;
+import { productDetails } from './data.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Khởi tạo Icon Lucide
+    lucide.createIcons();
+
+    // 2. Xử lý Modal hiển thị gói sản phẩm
+    const modal = document.getElementById('product-modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalCloseBtn = document.getElementById('modal-close');
+    const modalTriggers = document.querySelectorAll('[data-modal-trigger]');
+
+    const modalImage = document.getElementById('modal-image');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalCTA = document.querySelector('.modal-cta');
+
+    function openModal(productId) {
+        const details = productDetails[productId];
+        if (!details) return;
+
+        modalImage.src = details.imageSrc;
+        modalImage.alt = details.title;
+        modalTitle.textContent = details.title;
+        modalDescription.innerHTML = details.description;
+
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+            modal.classList.add('visible');
+        }, 10);
+    }
+
+    function closeModal() {
+        modal.classList.remove('visible');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
     
-    // 2. CẤU HÌNH GỬI EMAIL (Thay địa chỉ email của bạn vào đây)
-    var emailTo = "ndtung2608@gmail.com"; 
-    var subject = "🎉 [Agribank CN5] Khách hàng mới đăng ký tư vấn Y Tế";
+    modalTriggers.forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.modalTrigger;
+            openModal(productId);
+        });
+    });
+
+    modalCloseBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    modalCTA.addEventListener('click', () => {
+        closeModal();
+    });
+
+    // 3. Cuộn trang mượt
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // 4. Hiệu ứng Fade-in khi cuộn chuột (ĐÂY LÀ PHẦN GIÚP NỘI DUNG HIỆN LÊN)
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+
+    // 5. Kiểm tra Form và Gửi dữ liệu đi
+    const form = document.getElementById('consultation-form');
+    const phoneInput = document.getElementById('phone');
+    const submitBtn = document.querySelector('.btn-submit');
     
-    // 3. Soạn nội dung thư
-    var body = "Chào bạn,\n\n" +
-               "Có một khách hàng vừa để lại thông tin trên Website Giải pháp Y tế.\n\n" +
-               "📌 THÔNG TIN CHI TIẾT:\n" +
-               "- Họ và Tên / Chức vụ: " + fullName + "\n" +
-               "- Bệnh viện / Cơ sở Y tế: " + hospitalName + "\n" +
-               "- Số điện thoại: " + phone + "\n" +
-               "- Dịch vụ quan tâm: " + service + "\n" +
-               "- Thời gian đăng ký: " + new Date().toLocaleString("vi-VN") + "\n\n" +
-               "Bạn hãy nhanh chóng gọi điện liên hệ hỗ trợ khách hàng nhé!\n\n" +
-               "--- Hệ thống tự động báo cáo ---";
-               
-    // 4. Lệnh thực thi gửi mail
-    MailApp.sendEmail(emailTo, subject, body);
-    
-    // 5. Báo cáo về cho website biết là đã gửi thành công
-    return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
-    
-  } catch (error) {
-    // Nếu có lỗi thì báo lỗi về web
-    return ContentService.createTextOutput("Error: " + error.toString()).setMimeType(ContentService.MimeType.TEXT);
-  }
-}
+    // GẮN LINK GOOGLE APPS SCRIPT CỦA BẠN VÀO ĐÂY (Giữa 2 dấu nháy đơn)
+    const scriptURL = 'ĐIỀN_LINK_GOOGLE_SCRIPT_CỦA_BẠN_VÀO_ĐÂY'; 
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const phoneRegex = new RegExp('^[0-9]{10,11}$');
+        if (!phoneRegex.test(phoneInput.value)) {
+            alert('Vui lòng nhập số điện thoại hợp lệ (10-11 chữ số).');
+            phoneInput.focus();
+            return;
+        }
+        
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.innerText = 'Đang gửi thông tin...';
+        submitBtn.disabled = true;
+
+        const formData = new FormData();
+        formData.append('fullName', document.getElementById('fullName').value);
+        formData.append('hospitalName', document.getElementById('hospitalName').value);
+        formData.append('phone', document.getElementById('phone').value);
+        formData.append('service', document.getElementById('service').value);
+
+        fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => {
+                alert('Cảm ơn bạn! Thông tin đã được ghi nhận. Chuyên viên Agribank Chi nhánh 5 sẽ liên hệ sớm.');
+                form.reset(); 
+                submitBtn.innerText = originalBtnText; 
+                submitBtn.disabled = false;
+            })
+            .catch(error => {
+                console.error('Lỗi!', error.message);
+                alert('Có lỗi xảy ra khi gửi dữ liệu. Vui lòng thử lại sau.');
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
+    });
+});
