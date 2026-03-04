@@ -14,11 +14,6 @@ export const productDetails = {
                 <img src="https://i.postimg.cc/3Jhsh7v4/Open-API-01.png" alt="Tích hợp Open API Agribank" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                 <p style="font-size: 0.9em; color: #718096; margin-top: 8px; font-style: italic;">Hệ thống Open API mạnh mẽ, kết nối mượt mà với phần mềm quản lý (HIS) của Bệnh viện</p>
             </div>
-
-            <div style="margin-top: 25px; text-align: center;">
-                <img src="https://i.postimg.cc/N0ZnzwtK/Maket-Giai-thuong-Sao-khue-2025-Bang-ron-ngang.jpg" alt="Giải thưởng Sao Khuê 2025" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <p style="font-size: 0.9em; color: #718096; margin-top: 8px; font-style: italic;">Hệ thống CNTT Agribank xuất sắc đạt giải thưởng Sao Khuê - Khẳng định năng lực số hóa vượt trội</p>
-            </div>
         `
     },
     'b2c-staff': {
@@ -48,20 +43,4 @@ export const productDetails = {
 
                 <h4 style="color: #a31720; margin-bottom: 8px; font-size: 1.1rem; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">3. Phát hành thẻ tín dụng (Lãi suất từ 15%/năm)</h4>
                 <ul style="padding-left: 20px; margin-top: 0;">
-                    <li><strong>Thẻ tín dụng Quốc tế:</strong> Hạn mức tới <strong>5 tỷ đồng</strong>. Miễn lãi tối đa <strong>45 ngày</strong>. Đặc quyền: phòng chờ thương gia, sân golf, nhà hàng, resort 5 sao. Hoàn tiền lên đến 1.000.000đ/chương trình.</li>
-                    <li><strong>Thẻ nội địa Lộc Việt:</strong> Thẻ chip tích hợp 2-trong-1 (ghi nợ & tín dụng). Chạm đa tiện ích. Miễn lãi tối đa đến <strong>55 ngày</strong>. Hoàn tiền lên tới 2.000.000đ/chương trình.</li>
-                </ul>
-
-                <h4 style="color: #a31720; margin-bottom: 8px; font-size: 1.1rem; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">4. Sản phẩm Tiền gửi</h4>
-                <ul style="padding-left: 20px; margin-top: 0;">
-                    <li>Đa dạng kỳ hạn và hình thức trả lãi. Lãi suất cạnh tranh, an toàn tuyệt đối.</li>
-                    <li>Triển khai dễ dàng tại quầy giao dịch hoặc trên môi trường trực tuyến.</li>
-                </ul>
-
-                <div style="margin-top: 20px; text-align: center;">
-                    <img src="https://i.postimg.cc/3wzqcHhH/TIEN-GUI-SINH-LOI-THONG-MINH.jpg" alt="Tiền gửi sinh lời thông minh" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                </div>
-            </div>
-        `
-    }
-};
+                    <li><strong>Thẻ tín dụng Quốc tế:</strong> Hạn mức tới <strong>5 tỷ đồng</strong>. Miễn lãi tối đa
