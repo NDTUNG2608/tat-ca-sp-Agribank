@@ -5,7 +5,7 @@ export const productDetails = {
         imageSrc: 'https://i.postimg.cc/3wzqcHh3/MAY-POS.jpg', 
         description: `
             <ul style="padding-left: 20px; line-height: 1.8;">
-                <li><strong>Thanh toán không tiền mặt:</strong> Tích hợp QR, POS, Kiosk đăng ký khám chữa bệnh trực tiếp tại sảnh.</li>
+                <li><strong>Thanh toán không tiền mặt:</strong> Tích hợp VietQR, POS, Kiosk đăng ký khám chữa bệnh trực tiếp tại sảnh.</li>
                 <li><strong>Quản lý dòng tiền:</strong> Chi lương cán bộ nhân viên miễn phí, miễn phí phát hành thẻ trong suốt thời gian sử dụng dịch vụ.</li>
                 <li><strong>Tín dụng Tổ chức:</strong> Tài trợ vốn lưu động, dự án xây dựng bệnh viện hoặc mua sắm trang thiết bị y tế.</li>
             </ul>
