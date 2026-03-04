@@ -18,15 +18,36 @@ export const productDetails = {
         title: '2. Giải pháp Y Bác sĩ & CBNV (B2C)',
         imageSrc: 'https://www.agribank.com.vn/wcm/connect/7d57bb7f-5da2-41ac-a892-2ce1bb2fe19b/1/880x575+%289%29.jpg?MOD=AJPERES',
         description: `
-            <ul style="padding-left: 20px; line-height: 1.8;">
-                <li><strong>Vay tín chấp & Ứng lương:</strong> Hạn mức cao, lãi suất ưu đãi. Hình thức vay vốn đa dạng như thấu chi, phát hành thẻ Lộc Việt hoặc phê duyệt trước (Pre-approved) theo sao kê lương.</li>
-                <li><strong>Vay thế chấp:</strong> Lãi suất cạnh tranh với các ngân hàng BIG4, thời gian xử lý hồ sơ cực nhanh, đặc biệt <strong>không mua bảo hiểm bắt buộc</strong>.</li>
-                <li><strong>Thẻ tín dụng & Thanh toán:</strong> Lãi suất thấp nhất hệ thống ngân hàng, chương trình cash-back hấp dẫn. Hạng thẻ đa dạng tận hưởng đặc quyền như khách sạn 5 sao, phòng chờ sân bay.</li>
-                <li><strong>Tiện ích "Không phí":</strong> Tích hợp ứng dụng VNeID, miễn phí quản lý tài khoản và chuyển khoản nội/ngoại mạng 0 đồng.</li>
-            </ul>
-            <div style="margin-top: 20px; text-align: center;">
+            <div style="line-height: 1.6; color: #4a5568;">
+                <h4 style="color: #a31720; margin-bottom: 8px; font-size: 1.1rem; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">1. Vay thấu chi tài khoản</h4>
+                <ul style="padding-left: 20px; margin-top: 0;">
+                    <li><strong>Hạn mức:</strong> Lên đến <strong>500 triệu đồng</strong> (không có tài sản bảo đảm) và <strong>5.000 triệu đồng</strong> (có tài sản bảo đảm).</li>
+                    <li><strong>Thời hạn:</strong> Tối đa 12 tháng.</li>
+                    <li><strong>Lãi suất:</strong> Cạnh tranh hàng đầu với các TCTD uy tín khác.</li>
+                </ul>
+
+                <h4 style="color: #a31720; margin-bottom: 8px; font-size: 1.1rem; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">2. Vay phục vụ nhu cầu đời sống</h4>
+                <ul style="padding-left: 20px; margin-top: 0;">
+                    <li><strong>Mục đích:</strong> Mua nhà/đất, xây mới/sửa chữa nhà; mua sắm phương tiện đi lại, đồ dùng sinh hoạt thiết yếu.</li>
+                    <li><strong>Mức cho vay:</strong> Tối đa đến <strong>100% nhu cầu vốn</strong>.</li>
+                    <li><strong>Chính sách:</strong> Lãi suất hấp dẫn, linh hoạt kỳ hạn (ngắn, trung và dài hạn).</li>
+                </ul>
+
+                <h4 style="color: #a31720; margin-bottom: 8px; font-size: 1.1rem; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">3. Phát hành thẻ tín dụng (Lãi suất từ 13%/năm)</h4>
+                <ul style="padding-left: 20px; margin-top: 0;">
+                    <li><strong>Thẻ tín dụng Quốc tế:</strong> Hạn mức tới <strong>5 tỷ đồng</strong>. Miễn lãi tối đa <strong>45 ngày</strong>. Thanh toán trực tuyến bảo mật 3D-Secured. Đặc quyền: phòng chờ thương gia, sân golf, nhà hàng, resort 5 sao. Hoàn tiền lên đến 1.000.000đ/chương trình.</li>
+                    <li><strong>Thẻ nội địa Lộc Việt:</strong> Thẻ chip tích hợp 2-trong-1 (ghi nợ & tín dụng). Chạm đa tiện ích. Miễn lãi tối đa đến <strong>55 ngày</strong>. Hoàn tiền lên tới 2.000.000đ/chương trình.</li>
+                </ul>
+
+                <h4 style="color: #a31720; margin-bottom: 8px; font-size: 1.1rem; border-bottom: 1px dashed #e2e8f0; padding-bottom: 5px;">4. Sản phẩm Tiền gửi</h4>
+                <ul style="padding-left: 20px; margin-top: 0;">
+                    <li>Đa dạng kỳ hạn và hình thức trả lãi. Lãi suất cạnh tranh, an toàn tuyệt đối.</li>
+                    <li>Triển khai dễ dàng tại quầy giao dịch hoặc trên môi trường trực tuyến (App).</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 25px; text-align: center;">
                 <img src="https://www.agribank.com.vn/wcm/connect/5e75d63a-522d-4bb8-869c-5376437ae8f6/3/Agribank+kh%C3%B4ng+ng%E1%BB%ABng+m%E1%BB%9F+r%E1%BB%99ng+k%E1%BA%BFt+n%E1%BB%91i+v%C3%A0+%E1%BB%A9ng+d%E1%BB%A5ng+VNeID+trong+to%C3%A0n+b%E1%BB%99+qu%C3%A1+tr%C3%ACnh+cung+%E1%BB%A9ng+s%E1%BA%A3n+ph%E1%BA%A9m%2C+d%E1%BB%8Bch+v%E1%BB%A5+ng%C3%A2n+h%C3%A0ng.jpg?MOD=AJPERES" alt="Giao dịch VNeID" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <p style="font-size: 0.9em; color: #718096; margin-top: 8px; font-style: italic;">Ứng dụng công nghệ VNeID mang lại tiện ích tối đa cho CBNV</p>
             </div>
         `
     }
