@@ -1,7 +1,7 @@
 import { productDetails } from './data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Khởi tạo Icon
+    // 1. Khởi tạo Icon Lucide
     lucide.createIcons();
 
     // 2. Xử lý Modal hiển thị gói sản phẩm
@@ -83,21 +83,46 @@ document.addEventListener('DOMContentLoaded', () => {
         appearOnScroll.observe(fader);
     });
 
-    // 5. Kiểm tra Form đăng ký
+    // 5. Kiểm tra Form và Gửi dữ liệu đi
     const form = document.getElementById('consultation-form');
     const phoneInput = document.getElementById('phone');
+    const submitBtn = document.querySelector('.btn-submit');
     
+    // Gắn đường dẫn Google Apps Script của bạn vào biến này
+    const scriptURL = 'ĐIỀN_LINK_GOOGLE_SCRIPT_CỦA_BẠN_VÀO_ĐÂY'; 
+
     form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
         const phoneRegex = new RegExp('^[0-9]{10,11}$');
         if (!phoneRegex.test(phoneInput.value)) {
-            e.preventDefault();
             alert('Vui lòng nhập số điện thoại hợp lệ (10-11 chữ số).');
             phoneInput.focus();
             return;
         }
         
-        e.preventDefault();
-        alert('Cảm ơn bạn! Thông tin đã được ghi nhận. Chuyên viên Agribank sẽ liên hệ sớm.');
-        form.reset();
+        const originalBtnText = submitBtn.innerText;
+        submitBtn.innerText = 'Đang gửi thông tin...';
+        submitBtn.disabled = true;
+
+        const formData = new FormData();
+        formData.append('fullName', document.getElementById('fullName').value);
+        formData.append('hospitalName', document.getElementById('hospitalName').value);
+        formData.append('phone', document.getElementById('phone').value);
+        formData.append('service', document.getElementById('service').value);
+
+        fetch(scriptURL, { method: 'POST', body: formData })
+            .then(response => {
+                alert('Cảm ơn bạn! Thông tin đã được ghi nhận. Chuyên viên Agribank Chi nhánh 5 sẽ liên hệ sớm.');
+                form.reset(); 
+                submitBtn.innerText = originalBtnText; 
+                submitBtn.disabled = false;
+            })
+            .catch(error => {
+                console.error('Lỗi!', error.message);
+                alert('Có lỗi xảy ra khi gửi dữ liệu. Vui lòng thử lại sau.');
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
     });
 });
