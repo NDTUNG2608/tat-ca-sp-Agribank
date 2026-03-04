@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.querySelector('.btn-submit');
     
     // GẮN LINK GOOGLE APPS SCRIPT CỦA BẠN VÀO ĐÂY (Giữa 2 dấu nháy đơn)
-    const scriptURL = 'ĐIỀN_LINK_GOOGLE_SCRIPT_CỦA_BẠN_VÀO_ĐÂY'; 
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbznQnIUbua_KatlaoE4mvI5QxjZOU7BEiKxaiPiGe_hs3ZYKP-VcDULfE_UpASq0SwZ/exec'; 
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
