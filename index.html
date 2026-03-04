@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
         .header-logo {
             height: 65px; 
@@ -23,6 +24,7 @@
 
     <header>
         <img src="https://drive.google.com/uc?export=view&id=1uWzQq1DT2xLy_6BWDGyyTw4VV1MjRRMv" alt="Logo Agribank" class="header-logo">
+        
         <h1>Hệ Sinh Thái Tài Chính Y Tế</h1>
         <p>Giải pháp Tín dụng, Trả lương & Thanh toán toàn diện dành riêng cho Bệnh viện và Cơ sở Y tế.</p>
     </header>
@@ -59,22 +61,22 @@
             <form id="consultation-form">
                 <div class="form-group">
                     <label for="fullName">Họ và Tên / Chức vụ *</label>
-                    <input type="text" id="fullName" class="form-control" placeholder="VD: Nguyễn Văn A - Trưởng phòng Tài chính" required>
+                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="VD: Nguyễn Văn A - Trưởng phòng Tài chính" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="hospitalName">Tên Bệnh viện / Cơ sở y tế *</label>
-                    <input type="text" id="hospitalName" class="form-control" placeholder="Nhập tên đơn vị công tác" required>
+                    <input type="text" id="hospitalName" name="hospitalName" class="form-control" placeholder="Nhập tên đơn vị công tác" required>
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Số điện thoại liên hệ *</label>
-                    <input type="tel" id="phone" class="form-control" placeholder="Nhập số điện thoại (10-11 số)" required>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="Nhập số điện thoại (10-11 số)" required>
                 </div>
 
                 <div class="form-group">
                     <label for="service">Giải pháp quan tâm nhất</label>
-                    <select id="service" class="form-control">
+                    <select id="service" name="service" class="form-control">
                         <option value="Thanh toán không dùng tiền mặt (QR, POS)">Thanh toán không dùng tiền mặt (QR, POS)</option>
                         <option value="Dịch vụ chi trả lương qua tài khoản">Dịch vụ chi trả lương qua tài khoản</option>
                         <option value="Mở thẻ tín dụng / Vay tín chấp qua lương">Mở thẻ tín dụng / Vay tín chấp qua lương</option>
